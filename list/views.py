@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from list.models import Tasks
+from django.shortcuts import redirect
 
 def index(request):
     all_tasks = Tasks.objects.all()
@@ -48,7 +49,8 @@ def save(request,id):
             'all_tasks':all_tasks
         }
     
-    return render(request,"index.html",context)
+    return redirect("index")
+
 
 def delete(request,id):
     
@@ -64,4 +66,4 @@ def delete(request,id):
             'all_tasks':all_tasks
         }
     
-    return render(request,"index.html",context)
+    return redirect("index")
