@@ -4,12 +4,14 @@
 
 {% block content %}
 
+    <button class="btn btn-sucess"><a href="/create/">Create New Task</a></button>
     <h2>List of tasks</h2>
     {% for task in all_tasks %}
     <p>Title is --  {{task.title}}</p>
     <p>Description is --  {{task.desc}}</p>
-    <br>
-    <br>
+    <button class="btn btn-sucess"><a href="/edit/{{task.id}}">Edit</a></button>
+    <button class="btn btn-sucess"><a href="/delete/{{task.id}}">Delete</a></button>
+    <br><br><br><br>
     {% endfor %}
 
 {% endblock %}
