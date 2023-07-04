@@ -4,7 +4,12 @@
 
 {% block content %}
 
-    <h2>This is index page</h2>
-    <p>Welcome</p>
+    <h2>List of tasks</h2>
+    {% for task in all_tasks %}
+    <p>Title is --  {{task.title}}</p>
+    <p>Description is --  {{task.desc}}</p>
+    <br>
+    <br>
+    {% endfor %}
 
 {% endblock %}
